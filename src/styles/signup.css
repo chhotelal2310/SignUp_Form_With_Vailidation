@@ -1,0 +1,347 @@
+.mainContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+}
+
+.formContainer {
+  width: 25%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 6rem;
+  padding: 0rem 5rem 5rem 5rem;
+  border-radius: 8px;
+  background-color: gray;
+  box-shadow: 30px 30px 20px grey;
+}
+
+.headingandTitle {
+  padding-top: 2rem;
+  text-align: center;
+}
+.headingandTitle h1 {
+  font-size: 2rem;
+}
+.headingandTitle p {
+  padding: 0.8rem;
+}
+.formbodyContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  gap: 1rem;
+}
+.signingoogle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  height: 45px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+}
+.signingoogle:hover {
+  cursor: pointer;
+}
+.signingoogle img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.ButtonandOrContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+.ButtonandOrContainer div {
+  width: 50%;
+  height: 2%;
+  background-color: #e7e7e7;
+}
+.formdetailsContainer {
+  width: 100%;
+  height: 100%;
+}
+
+.formdetailsContainer input {
+  width: 100%;
+  height: 13%;
+  padding-left: 0.5rem;
+}
+#inputname,
+#inputemail {
+  margin: 6px 0px 15px 0px;
+}
+#inputpassword {
+  margin: 6px 0px 0px 0px;
+}
+
+.termandservices {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+.temservicesParagraph {
+  color: #c0c0c0;
+}
+
+.formdetailsContainer button {
+  background-color: antiquewhite;
+  padding: 1rem 8.1rem 1rem 8.1rem;
+  margin-top: 20px;
+  color: white;
+  background-color: black;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.formdetailsContainer button:hover {
+  cursor: pointer;
+}
+.AlreadySignIn {
+  padding-top: 0.5rem;
+  text-align: center;
+  color: #c0c0c0;
+}
+
+.AlreadySignIn span {
+  color: black;
+}
+
+/************************************************** Responsive**************************************/
+@media only screen and (min-width: 320px) {
+  .formContainer {
+    width: 90%;
+    height: 60%;
+    padding: 0rem 1rem 1rem 1rem;
+  }
+  .headingandTitle h1 {
+    font-size: 1.5rem;
+  }
+  .headingandTitle p {
+    padding: 0.3rem;
+    font-size: 0.8rem;
+    padding-bottom: 1rem;
+  }
+  .signingoogle {
+    height: 30px;
+  }
+  .formdetailsContainer input {
+    height: 10%;
+  }
+  #inputname,
+  #inputemail {
+    margin: 4px 0px 10px 0px;
+  }
+  #inputpassword {
+    margin: 4px 0px 0px 0px;
+  }
+
+  .formdetailsContainer button {
+    padding: 0.5rem 6.4rem 0.5rem 6.4rem;
+    margin-top: 15px;
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (min-width: 375px) {
+  .formContainer {
+    height: 65%;
+  }
+  .signingoogle {
+    height: 38px;
+  }
+  .formdetailsContainer input {
+    height: 13%;
+  }
+
+  .formdetailsContainer button {
+    padding: 0.5rem 7.9rem 0.5rem 7.9rem;
+    margin-top: 15px;
+    font-size: 0.9rem;
+  }
+}
+
+@media only screen and (min-width: 425px) {
+  .formContainer {
+    height: 70%;
+    padding: 0rem 1rem 1rem 1rem;
+  }
+  .headingandTitle h1 {
+    font-size: 1.8rem;
+  }
+  .headingandTitle p {
+    font-size: 0.888rem;
+    padding-bottom: 1.3rem;
+  }
+  .formdetailsContainer input {
+    height: 14%;
+  }
+  #inputname,
+  #inputemail {
+    margin: 4px 0px 14px 0px;
+  }
+  #inputpassword {
+    margin: 4px 0px 0px 0px;
+  }
+  .formdetailsContainer button {
+    padding: 0.7rem 9.2rem 0.7rem 9.2rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .formContainer {
+    width: 60%;
+    height: 70%;
+    padding: 0rem 1rem 1rem 1rem;
+  }
+  .formdetailsContainer button {
+    padding: 0.7rem 11.5rem 0.7rem 11.5rem;
+  }
+  .signingoogle {
+    height: 42px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .formContainer {
+    width: 45%;
+    height: 70%;
+  }
+  .formdetailsContainer button {
+    padding: 0.7rem 11.5rem 0.7rem 11.5rem;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .formContainer {
+    width: 30%;
+    height: 70%;
+  }
+  .formdetailsContainer button {
+    padding: 0.7rem 10.8rem 0.7rem 10.8rem;
+  }
+}
+
+@media only screen and (min-width: 1680px) {
+  .formContainer {
+    width: 25%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 6rem;
+    padding: 0rem 5rem 5rem 5rem;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 8px 8px 20px gray;
+  }
+
+  .headingandTitle {
+    padding-top: 2rem;
+    text-align: center;
+  }
+  .headingandTitle h1 {
+    font-size: 2rem;
+  }
+  .headingandTitle p {
+    padding: 0.8rem;
+  }
+  .formbodyContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 1rem;
+  }
+  .signingoogle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    height: 45px;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+  }
+  .signingoogle:hover {
+    cursor: pointer;
+  }
+  .signingoogle img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+  }
+
+  .ButtonandOrContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+  .ButtonandOrContainer div {
+    width: 50%;
+    height: 2%;
+    background-color: #e7e7e7;
+  }
+  .formdetailsContainer {
+    width: 100%;
+    height: 100%;
+  }
+
+  .formdetailsContainer input {
+    width: 100%;
+    height: 13%;
+    padding-left: 0.5rem;
+  }
+  #inputname,
+  #inputemail {
+    margin: 6px 0px 15px 0px;
+  }
+  #inputpassword {
+    margin: 6px 0px 0px 0px;
+  }
+
+  .termandservices {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+  }
+  .temservicesParagraph {
+    color: #c0c0c0;
+  }
+
+  .formdetailsContainer button {
+    background-color: antiquewhite;
+    padding: 1rem 8.1rem 1rem 8.1rem;
+    margin-top: 20px;
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .formdetailsContainer button:hover {
+    cursor: pointer;
+  }
+  .AlreadySignIn {
+    padding-top: 0.5rem;
+    text-align: center;
+    color: #c0c0c0;
+  }
+
+  .AlreadySignIn span {
+    color: black;
+  }
+}
