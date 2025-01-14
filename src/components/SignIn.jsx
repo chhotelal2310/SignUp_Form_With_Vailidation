@@ -1,30 +1,30 @@
 import React, { useState } from "react";
-import "../styles/signup.css";
+import "../styles/signin.css";
 import googlelogo from "../Images/googlelogo.png";
 import Checkbox from "@mui/material/Checkbox";
 import { Formik } from "formik";
-// import Signin from "../components/SignIn";
+// import Signup from "../components/Signup";
 import { useNavigate } from "react-router-dom";
-const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
-const Signup = () => {
+const label = { inputProps: { "aria-label": "Checkbox demo" } };
+const SignIn = () => {
   const [checked, setChecked] = useState(false);
   const navigate = useNavigate();
   return (
     <>
-      <div className="mainContainer">
-        <div className="formContainer">
-          <div className="headingandTitle">
-            <h1>Create Your Account</h1>
+      <div className="mainContainer1">
+        <div className="formContainer1">
+          <div className="headingandTitle1">
+            <h1>Sign In and Continue</h1>
             <p>Welecome Back! Please Enter your datails</p>
           </div>
 
-          <div className="formbodyContainer">
-            <div className="signingoogle">
+          <div className="formbodyContainer1">
+            <div className="signingoogle1">
               <img src={googlelogo} />
-              <span>sign up with google</span>
+              <span>sign in with google</span>
             </div>
-            <div className="ButtonandOrContainer">
+            <div className="ButtonandOrContainer1">
               <div></div>
               <p>OR</p>
               <div></div>
@@ -32,14 +32,10 @@ const Signup = () => {
 
             <div>
               <Formik
-                initialValues={{ name: "", email: "", password: "" }}
+                initialValues={{ email: "", password: "" }}
                 validate={(values) => {
                   const errors = {};
-                  if (values.name.length == 0) {
-                    errors.name = "Please Enter the name";
-                  } else if (values.name.length < 3) {
-                    errors.name = "Please Enter the name at list 3 character";
-                  } else if (!values.email) {
+                  if (!values.email) {
                     errors.email = "Please Enter the Email";
                   } else if (
                     !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(
@@ -50,8 +46,7 @@ const Signup = () => {
                   } else if (values.password.length == 0) {
                     errors.password = "Please Enter the password";
                   } else if (values.password.length < 5) {
-                    errors.password =
-                      "Please Enter the at list 5 character passord";
+                    errors.password = "Please Enter the currect passwoerd";
                   }
                   return errors;
                 }}
@@ -73,25 +68,8 @@ const Signup = () => {
                 }) => (
                   <form
                     onSubmit={handleSubmit}
-                    className="formdetailsContainer"
+                    className="formdetailsContainer1"
                   >
-                    <label htmlFor="name">Name</label>
-                    <br />
-                    <input
-                      id="inputname"
-                      type="text"
-                      placeholder="Enter the name......."
-                      name="name"
-                      onChange={handleChange}
-                      // onBlur={handleBlur}
-                      value={values.name}
-                    />
-                    {errors.name && touched.name && errors.name && (
-                      <p style={{ color: "red", marginTop: "-12px" }}>
-                        {errors.name}
-                      </p>
-                    )}
-                    <br />
                     <label htmlFor="email">Email</label>
                     <br />
                     <input
@@ -128,7 +106,7 @@ const Signup = () => {
                       </p>
                     )}
 
-                    <div className="termandservices">
+                    <div className="termandservices1">
                       <Checkbox
                         onClick={() => {
                           setChecked(!checked);
@@ -142,21 +120,16 @@ const Signup = () => {
                         {...label}
                         checked={checked}
                       />
-                      <p className="temservicesParagraph">
+                      <p className="temservicesParagraph1">
                         I accept all the term & condition
                       </p>
                     </div>
-                    <button type="submit">Sign up</button>
-                    <p className="AlreadySignIn">
-                      Already have an account?{" "}
-                      <span
-                        style={{ color: "rgb(89, 89, 226)" }}
-                        onClick={() => {
-                          navigate("/signin");
-                        }}
-                      >
-                        Sign in
-                      </span>
+                    <div className="buttonContainer1">
+                      <button type="submit">Sign in</button>
+                    </div>
+                    <p className="AlreadySignIn1">
+                      If don't have account please?{" "}
+                      <span onClick={() => navigate("/")}>Sign up</span>
                     </p>
                   </form>
                 )}
@@ -169,4 +142,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default SignIn;

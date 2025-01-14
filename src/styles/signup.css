@@ -15,8 +15,8 @@
   margin-top: 6rem;
   padding: 0rem 5rem 5rem 5rem;
   border-radius: 8px;
-  background-color: gray;
-  box-shadow: 30px 30px 20px grey;
+  background-color: white;
+  box-shadow: 8px 8px 20px gray;
 }
 
 .headingandTitle {
@@ -114,8 +114,8 @@
   color: #c0c0c0;
 }
 
-.AlreadySignIn span {
-  color: black;
+.AlreadySignIn span:hover {
+  cursor: pointer;
 }
 
 /************************************************** Responsive**************************************/
@@ -166,7 +166,7 @@
   }
 
   .formdetailsContainer button {
-    padding: 0.5rem 7.9rem 0.5rem 7.9rem;
+    padding: 0.5rem 7.6rem 0.5rem 7.6rem;
     margin-top: 15px;
     font-size: 0.9rem;
   }
@@ -195,7 +195,7 @@
     margin: 4px 0px 0px 0px;
   }
   .formdetailsContainer button {
-    padding: 0.7rem 9.2rem 0.7rem 9.2rem;
+    padding: 0.7rem 8.7rem 0.7rem 8.7rem;
   }
 }
 
@@ -228,7 +228,7 @@
     height: 70%;
   }
   .formdetailsContainer button {
-    padding: 0.7rem 10.8rem 0.7rem 10.8rem;
+    padding: 0.7rem 10.2rem 0.7rem 10.2rem;
   }
 }
 
@@ -324,7 +324,7 @@
 
   .formdetailsContainer button {
     background-color: antiquewhite;
-    padding: 1rem 8.1rem 1rem 8.1rem;
+    padding: 0.6rem 7.7rem 0.6rem 7.7rem;
     margin-top: 20px;
     color: white;
     background-color: black;
