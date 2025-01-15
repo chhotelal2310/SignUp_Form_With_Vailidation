@@ -3,13 +3,28 @@ import "../styles/signin.css";
 import googlelogo from "../Images/googlelogo.png";
 import Checkbox from "@mui/material/Checkbox";
 import { Formik } from "formik";
-// import Signup from "../components/Signup";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 const SignIn = () => {
   const [checked, setChecked] = useState(false);
   const navigate = useNavigate();
+  let handleLogin = (values) => {
+    let email = values.email;
+    axios
+      .post("http://172.16.16.20:5052/api/v1/user/loginUser", values)
+      .then((res) => {
+        console.log("You are Sign in successfully");
+        console.log(res.data);
+
+        // navigate("/otpverification", { email: email });
+        navigate("/otpverification", { state: { email: email } });
+      })
+      .catch((error) => {
+        console.log(`Error occurs : ${error}`);
+      });
+  };
   return (
     <>
       <div className="mainContainer1">
@@ -50,22 +65,11 @@ const SignIn = () => {
                   }
                   return errors;
                 }}
-                onSubmit={(values, { setSubmitting }) => {
-                  setTimeout(() => {
-                    alert(JSON.stringify(values, null, 2));
-                    setSubmitting(false);
-                  }, 400);
+                onSubmit={(values) => {
+                  handleLogin(values);
                 }}
               >
-                {({
-                  values,
-                  errors,
-                  touched,
-                  handleChange,
-                  handleBlur,
-                  handleSubmit,
-                  isSubmitting,
-                }) => (
+                {({ values, errors, touched, handleChange, handleSubmit }) => (
                   <form
                     onSubmit={handleSubmit}
                     className="formdetailsContainer1"
@@ -78,7 +82,6 @@ const SignIn = () => {
                       placeholder="Enter the email......."
                       name="email"
                       onChange={handleChange}
-                      // onBlur={handleBlur}
                       value={values.email}
                     />
                     {errors.email && touched.email && errors.email && (
@@ -97,7 +100,6 @@ const SignIn = () => {
                       placeholder="Enter the password......."
                       name="password"
                       onChange={handleChange}
-                      // onBlur={handleBlur}
                       value={values.password}
                     />
                     {errors.password && touched.password && (

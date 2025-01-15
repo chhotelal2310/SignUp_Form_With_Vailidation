@@ -1,15 +1,53 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/signup.css";
 import googlelogo from "../Images/googlelogo.png";
 import Checkbox from "@mui/material/Checkbox";
 import { Formik } from "formik";
-// import Signin from "../components/SignIn";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 const Signup = () => {
   const [checked, setChecked] = useState(false);
   const navigate = useNavigate();
+  let handleSubmit = (values, setSubmitting) => {
+    /***********************************************************************************************************************/
+    /*******************************************Below using  axios method **************************************************/
+    axios
+      .post("http://172.16.16.20:5052/api/v1/user/userSingUp", values)
+      .then((res) => {
+        console.log("You are Sign up successfully");
+        console.log(res.data);
+        setSubmitting(false);
+      })
+      .catch((error) => {
+        console.log(`Error occurs : ${error}`);
+      });
+    /***********************************************************************************************************************/
+    /*******************************************Below using  fetch method **************************************************/
+    // fetch("http://172.16.16.20:5052/api/v1/user/userSingUp", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(values),
+    // })
+    //   .then((response) => {
+    //     if (!response.ok) {
+    //       throw new Error("Network response was not ok");
+    //     }
+    //     return response.json();
+    //   })
+    //   .then((data) => {
+    //     console.log("Response from backend:", data);
+    //     setSubmitting(false);
+    //   })
+    //   .catch((error) => {
+    //     console.error(" I am error Error:", error);
+    //     setSubmitting(false);
+    //   });
+  };
+
   return (
     <>
       <div className="mainContainer">
@@ -56,10 +94,7 @@ const Signup = () => {
                   return errors;
                 }}
                 onSubmit={(values, { setSubmitting }) => {
-                  setTimeout(() => {
-                    alert(JSON.stringify(values, null, 2));
-                    setSubmitting(false);
-                  }, 400);
+                  handleSubmit(values, setSubmitting);
                 }}
               >
                 {({
@@ -67,7 +102,6 @@ const Signup = () => {
                   errors,
                   touched,
                   handleChange,
-                  handleBlur,
                   handleSubmit,
                   isSubmitting,
                 }) => (
@@ -83,7 +117,6 @@ const Signup = () => {
                       placeholder="Enter the name......."
                       name="name"
                       onChange={handleChange}
-                      // onBlur={handleBlur}
                       value={values.name}
                     />
                     {errors.name && touched.name && errors.name && (
@@ -100,7 +133,6 @@ const Signup = () => {
                       placeholder="Enter the email......."
                       name="email"
                       onChange={handleChange}
-                      // onBlur={handleBlur}
                       value={values.email}
                     />
                     {errors.email && touched.email && errors.email && (
@@ -119,7 +151,6 @@ const Signup = () => {
                       placeholder="Enter the password......."
                       name="password"
                       onChange={handleChange}
-                      // onBlur={handleBlur}
                       value={values.password}
                     />
                     {errors.password && touched.password && (
