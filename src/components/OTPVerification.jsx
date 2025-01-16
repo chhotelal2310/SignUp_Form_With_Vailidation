@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../styles/otpVerification.css";
 import OtpInput from "react-otp-input";
 import axios from "axios";
+import Cookies from "js-cookie";
 import { useLocation } from "react-router-dom";
 
 const OTPVerification = () => {
@@ -57,6 +58,19 @@ const OTPVerification = () => {
         .then((res) => {
           console.log("OTP verification successfully");
           console.log(res.data);
+          console.log(
+            "*******************************************  below is cookies data set *********************************"
+          );
+          Cookies.set("token", res.data.result, { expires: 7 });
+          console.log(res.data.result);
+
+          console.log(
+            "*******************************************  below is cookies data get *********************************"
+          );
+          const token = Cookies.get("token");
+          console.log(token);
+
+          // console.log(res.data.result);
         })
         .catch((error) => {
           console.log(`Error occurs verify the otp : ${error}`);

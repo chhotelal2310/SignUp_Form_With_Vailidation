@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* .TaralityHomeContainer {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("https://uideck.com/_next/image?url=https%3A%2F%2Fapi.uideck.com%2Fpublic%2Fimages%2Fstartup-tailwind.jpg&w=1920&q=75");
+  object-fit: cover;
+  background-repeat: no-repeat;
+} */
+
+.TaralityHomeContainer {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.TaralityHomeContainer img {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  object-fit: cover;
+}
