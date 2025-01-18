@@ -7,12 +7,6 @@ import {
 } from "react-router-dom";
 import { route } from "./route";
 import { AuthGuard } from "../guards/AuthGuard";
-{
-  /* <Route path="/" element={<Signup />} />
-            <Route path="/signin" element={<SignIn />} />
-            <Route path="/otpverification" element={<OTPVerification />} />
-            <Route path="/taralityhome" element={<TaralityHome />} /> */
-}
 const AllRoute = () => {
   return (
     <BrowserRouter>
@@ -26,8 +20,7 @@ const AllRoute = () => {
                   path={item?.path}
                   element={
                     <AuthGuard>
-                      {/* <item.Element /> */}
-                      {item.Element}
+                      <item.Element />
                     </AuthGuard>
                   }
                 />
